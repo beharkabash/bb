@@ -22,6 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kroi-auto-center.onrender.com'),
   title: "Kroi Auto Center - Laadukkaita Käytettyjä Autoja Helsingissä",
   description: "Kroi Auto Center - yli 15 vuoden kokemus autojen myynnistä. Löydä unelmiesi auto Helsingistä. BMW, Skoda, Mercedes, Volkswagen, Audi. Luotettava perheyritys.",
   keywords: "käytetyt autot Helsinki, autokauppa Helsinki, BMW, Skoda, Mercedes, Volkswagen, Audi, Kroi Auto Center, autojen myynti",
