@@ -20,6 +20,11 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     hoverable = false,
     clickable = false,
     children,
+    onAnimationStart: _onAnimationStart,
+    onAnimationEnd: _onAnimationEnd,
+    onDrag: _onDrag,
+    onDragStart: _onDragStart,
+    onDragEnd: _onDragEnd,
     ...props
   }, ref) => {
 

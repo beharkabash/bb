@@ -228,10 +228,10 @@ export async function GET(request: NextRequest) {
     );
 
     // Count bookings per time slot
-    const slotCounts = bookings.reduce((acc: Record<string, number>, booking: any) => {
+    const slotCounts = bookings.reduce((acc: Record<string, number>, booking: { preferredTime: string }) => {
       acc[booking.preferredTime] = (acc[booking.preferredTime] || 0) + 1;
       return acc;
-    }, {});
+    }, {} as Record<string, number>);
 
     // Determine available slots (max 2 per slot)
     const availableSlots = {

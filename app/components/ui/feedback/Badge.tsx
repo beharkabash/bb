@@ -25,6 +25,11 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
     onRemove,
     leftIcon,
     children,
+    onAnimationStart: _onAnimationStart,
+    onAnimationEnd: _onAnimationEnd,
+    onDrag: _onDrag,
+    onDragStart: _onDragStart,
+    onDragEnd: _onDragEnd,
     ...props
   }, ref) => {
 
@@ -201,7 +206,7 @@ interface NotificationBadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 export const NotificationBadge = forwardRef<HTMLSpanElement, NotificationBadgeProps>(
-  ({ className, variant = 'default', size = 'md', pulse = false, ...props }, ref) => {
+  ({ className, variant = 'default', size = 'md', pulse = false, onAnimationStart: _onAnimationStart, onAnimationEnd: _onAnimationEnd, onDrag: _onDrag, onDragStart: _onDragStart, onDragEnd: _onDragEnd, ...props }, ref) => {
     const variantClasses = {
       default: 'bg-purple-500',
       success: 'bg-green-500',

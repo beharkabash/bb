@@ -27,6 +27,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     disabled,
     children,
     motionProps,
+    onDrag: _onDrag,
+    onDragStart: _onDragStart,
+    onDragEnd: _onDragEnd,
+    onAnimationStart: _onAnimationStart,
+    onAnimationEnd: _onAnimationEnd,
     ...props
   }, ref) => {
     const baseClasses = [
@@ -119,16 +124,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       </>
     );
 
+    const MotionButton = motion.button;
+    
     return (
-      <motion.button
+      <MotionButton
         ref={ref}
         className={classes}
         disabled={disabled || loading}
-        {...defaultMotionProps}
+        whileHover={defaultMotionProps.whileHover}
+        whileTap={defaultMotionProps.whileTap}
         {...props}
       >
         {content}
-      </motion.button>
+      </MotionButton>
     );
   }
 );

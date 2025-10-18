@@ -30,6 +30,7 @@ export default function FinancingCalculator({
   const [isCalculating, setIsCalculating] = useState(false);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [isExpanded, setIsExpanded] = useState(!compact);
+  const [_showComparison, setShowComparison] = useState(false);
 
   interface Calculation {
     loanAmount: number;
@@ -103,11 +104,13 @@ export default function FinancingCalculator({
     const totalInt = totalPaid - loanAmount;
 
     // Store last calculation for comparison
-    const newCalculation = {
+    const newCalculation: Calculation = {
+      loanAmount,
+      interestRate,
+      loanTerm,
       monthlyPayment: payment,
       totalPayment: totalPaid,
-      totalInterest: totalInt,
-      timestamp: Date.now()
+      totalInterest: totalInt
     };
 
     // Show comparison if values changed significantly

@@ -40,6 +40,7 @@ export default function TradeInEstimator({
   const [isCalculating, setIsCalculating] = useState(false);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [showSuccess, setShowSuccess] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
 
   // Extract car makes from actual car data
   const carMakes = useMemo(() => {

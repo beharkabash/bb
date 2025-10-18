@@ -32,6 +32,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     inputSize = 'md',
     fullWidth = true,
     disabled,
+    onAnimationStart: _onAnimationStart,
+    onAnimationEnd: _onAnimationEnd,
+    onDrag: _onDrag,
+    onDragStart: _onDragStart,
+    onDragEnd: _onDragEnd,
     ...props
   }, ref) => {
     const [showPassword, setShowPassword] = useState(false);

@@ -180,8 +180,6 @@ export function CarPageLayout({
   children,
   carName,
   carMake,
-  _carModel,
-  _carYear,
   carSlug,
   className = '',
   pageKey = 'car'
